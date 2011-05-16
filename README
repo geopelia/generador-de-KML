@@ -1,1 +1,15 @@
-Este archivo e sun leeme de prueba pronto sera ampliado con mas informacion acerca del proyecto
+El generador KML es una sencilla aplicación que se encarga de transformar información
+y posición geografica de puntos y sitios de interes alamcenados en una base de datos
+al formato KML usado por herramientas como Google Maps y Google Earth.
+
+1-Descripción
+El generador es un script hecho en el lenguaje php que permite convertir ubicaciones
+geograficas almacenadas en una base de datos al formato KML (Keyhole Markup Language),
+este script se encarga de leer los puntos de la base de datos y los añade a un nuevo
+archivo kml.
+Este script esta diseñado para leer puntos determinados que solo poseen una latitud 
+y una longitud especifica y poligonos de 4 lados que representar sitios como edificios,
+plazas, salones, etc.
+2-Instalación
+Este archivo esta diseñado para trabajar usando el framework php kumbia entrepr
+3-Modelo de la base de datos
