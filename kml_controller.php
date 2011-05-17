@@ -1,7 +1,8 @@
 <?php
+
 class KmlController extends ApplicationController {
 	public function indexAction(){
-		$this->setParamToView("hola", $this->_cambiarPosBD());
+		//$this->setParamToView("hola", $this->_cambiarPosBD());
 		
 		
 		
@@ -13,8 +14,8 @@ class KmlController extends ApplicationController {
 			"AMLE3","EMOE0","AMLE2","AMLE1","VMKD1","VMKD2","VMKD3",
 			"AMAC6","VMDB7","AMAB6","CMGB5","AMLB4","EMOB3","AMDB2",
 			"AMKA1","AMKA2","VMUA10","VMDA9","VMUA8","VMDA7","VMUA2",
-			"VMUA1","VMP1","CMG1");*/
-		$arre2 = array("AMAD2","AMAD4");		
+			"VMUA1","VMP1","CMG1");
+		$arre2 = array("AMAD2","AMAD4");*/
 		foreach($arre2 as $filt){
 			$areaq = $this->Area->findFirst("id like '$filt'");
 			$lat1 = $areaq->getLattres();
@@ -26,8 +27,8 @@ class KmlController extends ApplicationController {
 			$areaq->setLattres($lat2);
 			$areaq->setLatcuatro($lat1);
 			if($areaq->save()==false){
-				$mesg = "fakka";
-			}else $mesg = "Al pelo";
+				$mesg = "error al cambiar base de datos";
+			}else $mesg = "Exito alterando datos";
 			
 		}
 		return $mesg;
@@ -86,10 +87,16 @@ class KmlController extends ApplicationController {
 			
 		}
 		header('Content-type: application/vnd.google-earth.kml+xml');
-		return $kmlOutput = $dom->saveXML();
+		$kmlOutput = $dom->saveXML();
+		return $kmlOutput;
 	}
 	//Controlador en la que se obtienen todos los marcadores
-	public function generateKmlAction(){	
+	public function generateKmlAction(){
+		/*$buffer = $this->_createKml();
+		$name_file="public/files/publicarchivo.kml";
+		$file=fopen($name_file,"w+");
+		fwrite ($file,$buffer);
+		fclose($file);*/
 		$this->setParamToView("kmlfile", $this->_createKml());
 				
 	}
