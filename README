@@ -9,7 +9,15 @@ este script se encarga de leer los puntos de la base de datos y los añade a un 
 archivo kml.
 Este script esta diseñado para leer puntos determinados que solo poseen una latitud 
 y una longitud especifica y poligonos de 4 lados que representar sitios como edificios,
-plazas, salones, etc.
+plazas cuadradas, salones, etc.
+
 2-Instalación
-Este archivo esta diseñado para trabajar usando el framework php kumbia entrepr
+Este archivo esta diseñado para trabajar usando el framework php kumbia entreprise, este archivo
+trabaja como el controlador, y debe ir en apps/tuaplicacion/controllers.
+Este archivo trabaja con unos modelos que deberian ir apps/tuaplicacion/models creando un
+modelo por cada tabla en tu base de datos. Y una vista apps/tuaplicacion/views que debe
+contener una carpeta con vistas de acuerdo al nombre del controlador (refierase a la documentacion
+de KumbiaPhp Framework para mayor informacion).
+
 3-Modelo de la base de datos
+
